@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-handlebars": "^8.0.1",
+    "handlebars": "^4.7.8"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "handlebars views/partials/albumTemplate.handlebars -f static/albumTemplate.js && handlebars views/partials/headerTemplate.handlebars -f static/headerTemplate.js && handlebars views/partials/navBarTemplate.handlebars -f static/navBarTemplate.js",
+    "prestart": "npm run build"
+  }
+}
