@@ -148,6 +148,8 @@ header a {
 
 #add-album-button:hover{
     background-color: orange;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #modal-backdrop {
