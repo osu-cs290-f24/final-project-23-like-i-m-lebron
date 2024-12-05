@@ -1,0 +1,57 @@
+{
+    "Songs in the Key of Life": {
+        "title": "Songs in the Key of Life",
+        "year": "1976",
+        "artist": "Stevie Wonder",
+        "photoURL": "https://m.media-amazon.com/images/I/61JpnY+8KkL._UF1000,1000_QL80_.jpg",
+        "rating": "☆ ☆ ☆ ☆ ☆",
+        "integer-rating": 5,
+        "queued": true,
+        "reviewExists": true,
+        "review": "a nice review"
+    },
+    "K Drama": {
+        "title": "K Drama",
+        "year": "2021",
+        "artist": "Orange Kash",
+        "photoURL": "https://prephoops-uploads.s3.amazonaws.com/ph/uploads/2022/03/sullivan.jpg",
+        "rating": "☆ ☆ ☆ ☆ ☆",
+        "integer-rating": 5,
+        "queued": true,
+        "reviewExists": false,
+        "review": ""
+    },
+    "Chromakopia": {
+        "title": "Chromakopia",
+        "year": "2024",
+        "artist": "Tyler, the Creator",
+        "photoURL": "data:image/jpeg;base64,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",
+        "rating": "☆ ☆ ☆ ☆",
+        "integer-rating": 4,
+        "queued": false,
+        "reviewExists": false,
+        "review": ""
+    },
+    "GNX": {
+        "title": "GNX",
+        "year": "2024",
+        "artist": "Kendrick Lamar",
+        "photoURL": "https://upload.wikimedia.org/wikipedia/en/9/93/Kendrick_Lamar_-_GNX.png",
+        "rating": "☆ ☆ ☆ ☆",
+        "integer-rating": 4,
+        "queued": false,
+        "reviewExists": false,
+        "review": ""
+    },
+    "For All the Dogs": {
+        "title": "For All the Dogs",
+        "year": "2023",
+        "artist": "Drake",
+        "photoURL": "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0235fba7-d96c-4d90-a4f2-854458461d08_1200x1200.jpeg",
+        "rating": "☆",
+        "integer-rating": 1,
+        "queued": false,
+        "reviewExists": false,
+        "review": ""
+    }
+}
