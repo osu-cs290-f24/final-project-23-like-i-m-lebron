@@ -1,0 +1,66 @@
+<div id="modal-backdrop" class="hidden"></div>
+    <div id="add-album-modal" class="hidden">
+        <div class="modal-dialog">
+
+            <div class="modal-header">
+                <h3>Add an Album to MusiCubed</h3>
+                <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="album-input-element">
+                    <label for="album-title-input">Album title</label>
+                    <input type="text" id="album-title-input"></input>
+                </div>
+
+                <div class="album-input-element">
+                    <label for="album-year-input">Release Date</label>
+                    <input type="number" id="album-year-input">
+                </div>
+
+                <div class="album-input-element">
+                    <label for="album-artist-input">Artist Name</label>
+                    <input type="text" id="album-artist-input">
+                </div>
+
+                <div class="album-input-element">
+                    <label for="album-photo-input">Cover URL</label>
+                    <input type="text" id="post-photo-input">
+                </div>
+                
+                <!-- only the above are required if added to queue -->
+
+                <div class="album-input-element">
+                    <label for="album-review-input">Review</label>
+                    <textarea type="text" id="album-review-input"></textarea>
+                </div>
+
+                <div class="album-input-element">
+                    <label for="album-rating-input">Rating</label>
+                    <div class="album-input-element">
+                        <select id="album-rating-input">
+                        <option>☆</option>
+                        <option>☆ ☆</option>
+                        <option>☆ ☆ ☆</option>
+                        <option>☆ ☆ ☆ ☆</option>
+                        <option>☆ ☆ ☆ ☆ ☆</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="album-input-element">
+                    <label for="album-song-input">Best Track</label>
+                    <input type="text" id="album-song-input">
+                </div>
+
+            </div>
+
+        <div class="modal-footer">
+            <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
+            <button type="button" id="modal-queue" class="action-button">Queue</button>
+            <button type="button" id="modal-add" class="action-button">Add</button>
+        </div>
+
+    </div>
+</div>

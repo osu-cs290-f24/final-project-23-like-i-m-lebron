@@ -2,117 +2,12 @@
 
 <main class="content">       
     <section class="divider-container" id="review-section">
-        <!-- example album below -->
-        <div class="album">
-            <div class="album-contents">
-                <div class="album-image-container">
-                <img src="https://m.media-amazon.com/images/I/61JpnY+8KkL._UF1000,1000_QL80_.jpg" alt="Songs in the Key of Life">
-                </div>
-                <div class="album-info-container">
-                <div class="album-rating">☆ ☆ ☆ ☆ ☆</div>
-                <a href="#" class="album-title">Songs in the Key of Life</a> 
-                <span class="album-year">(1976)</span>
-                <div class="album-artist">Stevie Wonder</div>
-                </div>
-            </div>
-        </div>
+        {{#each albums}}
+            {{#if reviewExists}}
+                {{> albumReviewTemplate}}
+            {{/if}}
+        {{/each}}
     </section>
 </main>
 
-        <div id="modal-backdrop" class="hidden"></div>
-        <div id="add-album-modal" class="hidden">
-            <div class="modal-dialog">
-
-                <div class="modal-header">
-                    <h3>Add an Album to MusiCubed</h3>
-                    <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="album-input-element">
-                        <label for="album-title-input">Album title</label>
-                        <input type="text" id="album-title-input"></input>
-                    </div>
-
-                    <div class="album-input-element">
-                        <label for="album-year-input">Release Date</label>
-                        <input type="number" id="album-year-input">
-                    </div>
-
-                    <div class="album-input-element">
-                        <label for="album-artist-input">Artist Name</label>
-                        <input type="text" id="album-artist-input">
-                    </div>
-
-                    <div class="album-input-element">
-                        <label for="album-photo-input">Cover URL</label>
-                        <input type="text" id="post-photo-input">
-                    </div>
-                    
-                    <!-- only the above are required if added to queue -->
-
-                    <div class="album-input-element">
-                        <label for="album-review-input">Review</label>
-                        <textarea type="text" id="album-review-input"></textarea>
-                    </div>
-
-                    <div class="album-input-element">
-                        <!-- <fieldset id="album-rating-fieldset" class="album-fieldset">
-                          <legend>Rating</legend>
-                          <div>
-                            <input type="radio" name="album-rating" id="album-rating-one" value="1" checked>
-                            <label for="album-rating-one">☆</label>
-                          </div>
-                          <div>
-                            <input type="radio" name="album-rating" id="album-rating-two" value="2">
-                            <label for="album-rating-two">☆ ☆</label>
-                          </div>
-                          <div>
-                            <input type="radio" name="album-rating" id="album-rating-three" value="3">
-                            <label for="album-rating-three">☆ ☆ ☆</label>
-                          </div>
-                          <div>
-                            <input type="radio" name="album-rating" id="album-rating-four" value="4">
-                            <label for="album-rating-four">☆ ☆ ☆ ☆</label>
-                          </div>
-                          <div>
-                            <input type="radio" name="album-rating" id="album-rating-five" value="5">
-                            <label for="album-rating-five">☆ ☆ ☆ ☆ ☆</label>
-                          </div>
-                        </fieldset> -->
-                        <!-- <label for="album-rating-input">Rating</label>
-
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span> -->
-                        <label for="album-rating-input">Rating</label>
-                        <div class="album-input-element">
-                            <select id="album-rating-input">
-                            <option>☆</option>
-                            <option>☆ ☆</option>
-                            <option>☆ ☆ ☆</option>
-                            <option>☆ ☆ ☆ ☆</option>
-                            <option>☆ ☆ ☆ ☆ ☆</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="album-input-element">
-                        <label for="album-song-input">Best Track</label>
-                        <input type="text" id="album-song-input">
-                    </div>
-
-                </div>
-
-            <div class="modal-footer">
-                <button type="button" id="modal-cancel" class="modal-hide-button action-button">Cancel</button>
-                <button type="button" id="modal-queue" class="action-button">Queue</button>
-                <button type="button" id="modal-add" class="action-button">Add</button>
-            </div>
-
-        </div>
-    </div>
+{{> addAlbumModalTemplate}}

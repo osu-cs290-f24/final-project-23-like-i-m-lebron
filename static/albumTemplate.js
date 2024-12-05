@@ -8,18 +8,18 @@ templates['albumTemplate'] = template({"compiler":[8,">= 4.3.0"],"main":function
         return undefined
     };
 
-  return "<div class=\"album\">\n    <div class=\"album-contents\">\n        <div class=\"album-image-container\">\n            <img src=\""
+  return "<div class=\"album\">\r\n    <div class=\"album-contents\">\r\n        <div class=\"album-image-container\">\r\n            <img src=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"photoURL") || (depth0 != null ? lookupProperty(depth0,"photoURL") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"photoURL","hash":{},"data":data,"loc":{"start":{"line":4,"column":22},"end":{"line":4,"column":34}}}) : helper)))
     + "\" alt=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":4,"column":41},"end":{"line":4,"column":50}}}) : helper)))
-    + "\">\n        </div>\n        <div class=\"album-info-container\">\n            <div class=\"album-rating\">"
+    + "\">\r\n        </div>\r\n        <div class=\"album-info-container\">\r\n            <div class=\"album-rating\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"rating") || (depth0 != null ? lookupProperty(depth0,"rating") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"rating","hash":{},"data":data,"loc":{"start":{"line":7,"column":38},"end":{"line":7,"column":48}}}) : helper)))
-    + "</div>\n                <a href=\"#\" class=\"album-title\">"
+    + "</div>\r\n                <a href=\"#\" class=\"album-title\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"title") || (depth0 != null ? lookupProperty(depth0,"title") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data,"loc":{"start":{"line":8,"column":48},"end":{"line":8,"column":57}}}) : helper)))
-    + "</a> \n                <span class=\"album-year\">("
+    + "</a> \r\n                <span class=\"album-year\">("
     + alias4(((helper = (helper = lookupProperty(helpers,"year") || (depth0 != null ? lookupProperty(depth0,"year") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"year","hash":{},"data":data,"loc":{"start":{"line":9,"column":42},"end":{"line":9,"column":50}}}) : helper)))
-    + ")</span>\n            <div class=\"album-artist\">"
+    + ")</span>\r\n            <div class=\"album-artist\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"artist") || (depth0 != null ? lookupProperty(depth0,"artist") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"artist","hash":{},"data":data,"loc":{"start":{"line":10,"column":38},"end":{"line":10,"column":48}}}) : helper)))
-    + "</div>\n        </div>\n    </div>\n</div>";
+    + "</div>\r\n        </div>\r\n    </div>\r\n</div>";
 },"useData":true});
 })();
