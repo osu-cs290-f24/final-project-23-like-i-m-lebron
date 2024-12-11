@@ -107,22 +107,51 @@ function addNewAlbum() {
     var rating = document.querySelector('#album-rating-input').value
     var song = document.getElementById("album-song-input").value
 
+    var integer_rating = rating.split("☆").length - 1
+
     //alert if not all fields are filled out
     if (!title || !year || !artist || !photoURL || !review || !song) {
         alert("You must fill in all of the fields!")
     } else {
         console.log("Adding album:", title, year, artist, photoURL, rating, song)
-        allAlbums.push({
-            title: title,
-            year: year,
-            artist: artist,
-            photoURL: photoURL,
-            review: review,
-            rating: rating,
-            song: song
+
+        const newAlbum = {
+            title,
+            year,
+            artist,
+            photoURL,
+            review,
+            rating,
+            queued: false,
+            "integer-rating": integer_rating,
+            reviewExists: review.trim() !== "",
+            song
+        }
+
+        //send the new album to the server
+        fetch('/add-album', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newAlbum)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log("Album added successfully")
+                allAlbums.push(newAlbum)
+                renderAllAlbums()
+                closeModal()
+            } else {
+                return response.text().then(text => { throw new Error(text); })
+            }
+        })
+        .catch(error => {
+            console.error("Error adding album:", error)
+            alert("Failed to add album: " + error.message)
         })
 
-        renderAllAlbums()
+        //renderAllAlbums()
 
         //close the modal
         var modal = document.getElementById("add-album-modal")
