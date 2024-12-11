@@ -73,8 +73,38 @@ app.get('/', function (req, res, next) {
     var albumArray = Object.values(albumData)
     // Sort the albumArray by "integer-rating" in descending order (highest to lowest)
     albumArray.sort((a, b) => b['integer-rating'] - a['integer-rating']);
+    // only display two or less albums for the queue, reviews, and most popular
+    let queued_albums_displayed = 0
+    let reviewed_albums_displayed = 0
+    homepage_albums_to_display = []
+    for (let i = 0; i < albumArray.length; i++) {
+        // Add the first two albums no matter what since they are the most popular
+        if(i < 2) {
+            homepage_albums_to_display.push(albumArray[i])
+            // check if the two albums have a review or are queued
+            if (albumArray[i].queued == true) {
+                queued_albums_displayed += 1
+            } if (albumArray[i].review != "") {
+                reviewed_albums_displayed += 1
+            }
+        }
+        else {
+            if (albumArray[i].queued == true && queued_albums_displayed < 2) {
+                homepage_albums_to_display.push(albumArray[i])
+                queued_albums_displayed += 1
+                if (albumArray[i].review != "") {
+                    reviewed_albums_displayed += 1
+                }
+            }
+            else if (albumArray[i].review != "" && reviewed_albums_displayed < 2) {
+                homepage_albums_to_display.push(albumArray[i])
+                reviewed_albums_displayed += 1
+            }
+        }
+        
+      }
     res.status(200).render("homePage", {
-        albums: albumArray
+        albums: homepage_albums_to_display
     })
 })
 
