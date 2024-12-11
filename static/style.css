@@ -1,19 +1,21 @@
 body {
-    font-family: 'inter', sans-serif;
+    font-family: 'oswald', sans-serif;
     margin: 0;
+    background-color: #141414;
 }
 
 a {
     text-decoration: none;
-    color: brown;
+    color: #a27ec4;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
+
 header {
-    background-color: gray;
+    background-color: #1a1a1a;
     display: flex;
     align-items: center;
     position: relative;
@@ -26,7 +28,7 @@ header {
 }
 
 header a {
-    color: black;
+    color: #a27ec4;
     font-weight: 800;
 }
 
@@ -40,28 +42,27 @@ header a {
 
 .navbar {
     font-size: 22px;
-    background-color: white;
+    background-color: #1a1a1a;
 }
 
 .navlist{
     margin: 0;
+    color: #a27ec4;
+    font-family: 'oswald', sans-serif;  
 }
 
 .navitem {
     display: inline-block;
 }
 
-.navitem:hover {
-    background-color: orange;
-}
-
 .navitem a {
     display: inline-block;
-    color: grey;
+    font-family: 'oswald', sans-serif;
+    color: #b49fc7;
     padding: 10px 20px;
 }
 
-.navitem.right {
+.navitem-right {
     float: right;
 }
 
@@ -77,6 +78,8 @@ header a {
 .divider-container{
     text-align: center;
     flex: 1;
+    color: #bfbfbf;
+    font-family: 'oswald', sans-serif;
 }
 
 .album{
@@ -87,8 +90,8 @@ header a {
     width: 400px;
     margin: 10px;
     padding: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
+    border-radius: 10px;
+    background-color: #2b2b2b ;
 }
 
 .album-contents{
@@ -107,22 +110,31 @@ header a {
 .album-info-container{
     width: 100%;
     margin-left: 5px;
+    color: #bfbfbf;
 }
 
 .album-rating{
     text-align: center;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 15px;
 }
 
+.album-review-container{
+    font-size: 10px;
+    color: #bfbfbf;
+    display: block; 
+    margin-top: 10px; 
+    text-align: center;
+}
 .album-title{
     font-weight: 900;
 }
 
 .album-year{
     font-weight: 300;
-    font-size: 80%
+    font-size: 80%;
 }
+
 
 .listened-button{
     width: 150px;
@@ -141,13 +153,13 @@ header a {
     width: 150px;
     font-family: 'inter', sans-serif;
     font-size: 22px;
-    color: gray;
-    background-color: white;
+    color: #b49fc7;
+    background-color: #1a1a1a;
     border: none;
 }
 
 #add-album-button:hover{
-    background-color: orange;
+    background-color: #1a1a1a;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -250,23 +262,40 @@ textarea {
     border: 1px solid #aaa;
 }
 
-.modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 10px 20px 10px;
-}
+
 
 #modal-cancel,
 #modal-accept,
 #modal-queue {
   margin-right: 20px;
 }
+.modal-header{
+    background-color: #a27ec4;
+}
+
+.modal-body {
+    background-color:#333 ;
+    color: #eee;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 20px 10px;
+    background-color: #a27ec4;
+}
 
 #modal-cancel {
     color: #333;
     background-color: #fff;
 }
-  
+
 #modal-cancel:hover {
     background-color: #eee;
+}
+
+.error-container {
+    color: #eee;
+    text-align: center;
+    padding-top: 100px;
 }
