@@ -185,3 +185,95 @@ addButton.addEventListener("click", addNewAlbum)
 
 
 
+//////////////////////////////////////////////////////////////////////////
+// ADDING THE ALBUM TO THE QUEUE IF "QUEUE" IS CLICKED IN MODAL
+function addAlbumToQueue() {
+
+    console.log("Add album to queue clicked")
+
+    //get the values of each field
+    var title = document.getElementById("album-title-input").value
+    var year = document.getElementById("album-year-input").value
+    var artist = document.getElementById("album-artist-input").value
+    var photoURL = document.getElementById("post-photo-input").value
+    var review = document.getElementById("album-review-input").value
+    var rating = document.querySelector('#album-rating-input').value
+    var song = document.getElementById("album-song-input").value
+
+    //alert if not all fields are filled out
+    if (review || song) {
+        alert("You must fill in ONLY the queue fields: Album Title, Release Date, Artist Name, Cover URL")
+    } else if (!title || !year || !artist || !photoURL) {
+        alert("You must fill in the necessary queue fields: Album Title, Release Date, Artist Name, Cover URL")
+    } else {
+
+        //only these fields for queued albums
+        const newAlbum = {
+            title,
+            year,
+            artist,
+            photoURL,
+            "queued": true,
+            "reviewExists": false
+        }
+
+        //send the new album to the server
+        fetch('/add-album', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newAlbum)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log("Album added successfully")
+                allAlbums.push(newAlbum)
+                renderAllAlbumsQueued()
+                closeModal()
+            } else {
+                return response.text().then(text => { throw new Error(text); })
+            }
+        })
+        .catch(error => {
+            console.error("Error adding album:", error)
+            alert("Failed to add album: " + error.message)
+        })
+
+        //renderAllAlbums()
+
+        //close the modal
+        var modal = document.getElementById("add-album-modal")
+        var backdrop = document.getElementById("modal-backdrop")
+        modal.classList.add("hidden")
+        backdrop.classList.add("hidden")
+        clearInputFields()
+    }
+    
+}
+
+
+function renderAllAlbumsQueued() {
+    allAlbums.forEach(album => {
+        insertNewAlbumWithHandleBars(
+            album.title,
+            album.year,
+            album.artist,
+            album.photoURL
+        )
+    })
+}
+
+
+var addQueueButton = document.getElementById("modal-queue")
+addQueueButton.addEventListener("click", addAlbumToQueue)
+
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+

@@ -21,10 +21,10 @@ app.use(express.static("static"))
 app.post('/add-album', function (req, res) {
     const newAlbum = req.body
 
-    if (!newAlbum.title || !newAlbum.artist || !newAlbum.year || !newAlbum.photoURL || !newAlbum.review || !newAlbum.rating || !newAlbum.song) {
-        res.status(400).send("Missing required fields.")
-        return
-    }
+    // if (!newAlbum.title || !newAlbum.artist || !newAlbum.year || !newAlbum.photoURL || !newAlbum.review || !newAlbum.rating || !newAlbum.song) {
+    //     res.status(400).send("Missing required fields.")
+    //     return
+    // }
 
     //check if the album already exists
     if (albumData[newAlbum.title]) {

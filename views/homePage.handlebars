@@ -27,7 +27,10 @@
                 <h2 class="container-title">Highest Rated</h2>
                 <!-- sort albums by rating here -->
                 {{#each albums}}
-                  {{> albumTemplate}}
+                    {{#if queued}}
+                    {{else}}
+                        {{> albumTemplate}}
+                    {{/if}}
                 {{/each}}
                 <div class="see-more-link"><a href="./popular">See All Rated</a></div>
             </section>

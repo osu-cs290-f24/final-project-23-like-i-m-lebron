@@ -3,7 +3,10 @@
 <main class="content">     
     <section class="divider-container" id="rating-section">
         {{#each albums}}
-            {{> albumTemplate}}
+            {{#if queued}}
+            {{else}}
+                {{> albumTemplate}}
+            {{/if}}
         {{/each}}
     </section>
 </main>
